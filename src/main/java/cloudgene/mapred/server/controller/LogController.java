@@ -18,7 +18,6 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Produces;
 import io.micronaut.security.annotation.Secured;
 import io.micronaut.security.authentication.Authentication;
-import io.micronaut.security.rules.SecurityRule;
 import jakarta.inject.Inject;
 
 @Controller
@@ -39,7 +38,7 @@ public class LogController {
 	protected WorkspaceFactory workspaceFactory;
 
 	@Get("/logs/{id}")
-	@Secured(SecurityRule.IS_AUTHENTICATED)
+	@Secured(User.ROLE_ADMIN)
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getByJob(Authentication authentication, String id) throws IOException {
 

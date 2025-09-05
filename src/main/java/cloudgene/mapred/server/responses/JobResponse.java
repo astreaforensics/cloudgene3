@@ -221,9 +221,8 @@ public class JobResponse {
 		List<ParameterOutputResponse> responsesParamsOut = ParameterOutputResponse.build(job.getOutputParams());
 		response.setParameterOutputResponse(responsesParamsOut);
 
-		// set log if user is admin
+		// expose logs link only for admins
 		if (user.isAdmin()) {
-			// job.setLogs("logs/" + job.getId());
 			response.setLogs("logs/" + job.getId());
 		} else {
 			response.setLogs("");

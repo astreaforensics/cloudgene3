@@ -86,7 +86,9 @@
 		</li>
 		{{/job.canShowLog}}
 		</ul>
-
+		{{#is(tab, 'logs')}}
+			<div class="tab-pane active log-pane" id="tab-logs"></div>
+		{{/is}}
 	<script type="text/javascript">
 		function resizeIframe(iframe) {
 			height = iframe.contentWindow.document.body.scrollHeight + 10 + 10;
@@ -129,9 +131,7 @@
 			{{/is}}
 		{{/is}}
 
-		{{#is(tab, 'logs')}}
-			<div class="tab-pane active log-pane" id="tab-logs"></div>
-		{{/is}}
+
 
 	</div>
 </div>
